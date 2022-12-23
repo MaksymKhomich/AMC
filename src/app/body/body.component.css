@@ -1,0 +1,713 @@
+:host {
+  width: 100%;
+  display: grid;
+  grid-template: 100vh auto 100vh 100vh/1fr;
+}
+
+.container {
+  padding: 50px 15px;
+  margin: 0px auto;
+  color: #000;
+  max-width: 1200px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.title {
+  background-image: linear-gradient(180deg, rgba(51, 54, 69, 0.3) 20%, rgba(51, 54, 69, 0.3) 80%), url("../../assets/space-sky.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+}
+.title h1 {
+  font-weight: 700;
+  font-size: 42px;
+  padding-top: 40px;
+  color: white;
+  letter-spacing: 1px;
+  width: 80%;
+  line-height: 60px;
+  text-transform: uppercase;
+}
+.title h3 {
+  font-weight: 500;
+  font-size: 25px;
+  color: antiquewhite;
+  width: 370px;
+  line-height: 30px;
+  margin-bottom: 120px;
+}
+.title a {
+  text-decoration: none;
+  color: #000;
+  font-size: 21px;
+  font-weight: 700;
+  border-radius: 50px;
+  border: none;
+  background-color: darksalmon;
+  padding: 15px 32px;
+}
+.title a:hover {
+  cursor: pointer;
+  background-color: #000;
+  color: antiquewhite;
+}
+
+#photos {
+  background: linear-gradient(270deg, rgba(51, 54, 69, 0.2) 20%, rgba(51, 54, 69, 0.4) 80%), url("../../assets/Mars-bg.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: auto;
+  width: 100%;
+  min-height: 100vh;
+  color: aliceblue;
+  padding-top: 80px;
+}
+#photos .section {
+  display: flex;
+  justify-content: space-between;
+}
+#photos .side {
+  width: 21%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  position: -webkit-sticky;
+  position: sticky;
+  gap: 15px;
+  top: 60px;
+  margin-top: 20px;
+}
+#photos .side h3 {
+  color: #fff;
+}
+#photos .side .rover,
+#photos .side .cameras {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+#photos .side .rover input,
+#photos .side .cameras input {
+  position: relative;
+  height: 38px;
+  width: 38px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+#photos .side .rover input::before,
+#photos .side .cameras input::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 2px solid #c35a19;
+}
+#photos .side .rover input:checked::after,
+#photos .side .cameras input:checked::after {
+  content: url("../../assets/mars-input.png");
+  position: absolute;
+  top: 6.6px;
+  left: 19px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  visibility: visible;
+}
+#photos .side .rover div,
+#photos .side .cameras div {
+  color: #efe5e5;
+  font-size: 24px;
+  font-weight: 600;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  line-height: 35px;
+}
+#photos .side .sol div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+#photos .side .sol input {
+  margin-top: 30px;
+  font-weight: 500;
+  font-size: 14px;
+}
+#photos .side .sol label {
+  font-size: 16px;
+  font-weight: 600;
+  height: 24px;
+}
+#photos .side button {
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 15px 0;
+  border-radius: 25px;
+  border: none;
+  padding: 5px;
+  font-size: 17px;
+  background-color: #d38656;
+}
+#photos .side button:hover {
+  background: darksalmon;
+  color: #fff;
+  cursor: pointer;
+}
+#photos .content {
+  width: 75%;
+  display: flex;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+#photos .content .card {
+  width: 30%;
+  height: 400px;
+  border: 1px solid #000;
+  border-radius: 25px;
+  padding: 15px;
+  background: #fff;
+  color: #000;
+}
+#photos .content img {
+  width: 100%;
+  height: 250px;
+}
+#photos .content p {
+  margin: 0;
+  padding-bottom: 8px;
+}
+#photos .photos-template {
+  width: 75%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+}
+#photos .photos-template .photo-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15px;
+  width: 250px;
+  height: 300px;
+  padding: 10px;
+  border: 3px solid black;
+  border-radius: 25px;
+  background-color: #fff;
+  color: #000;
+}
+#photos .photos-template .photo-card img {
+  width: 230px;
+  height: 230px;
+}
+#photos .photos-template button {
+  width: 250px;
+  height: 35px;
+  text-align: center;
+  margin: 30px auto;
+  background-color: darksalmon;
+  color: #f1e6db;
+  border: none;
+  font-size: 21px;
+  font-weight: 500;
+  border-radius: 25px;
+  cursor: pointer;
+}
+#photos .photos-template button:hover {
+  background-color: #fff;
+  color: #000;
+}
+#photos .photos-template button:active {
+  transform: translateY(5px);
+}
+#photos .photos-template .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5%;
+}
+#photos #endList {
+  background: #000;
+  height: 50px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 21px;
+  font-weight: 700;
+}
+#photos .emptyList {
+  font-weight: 500;
+  font-size: 45px;
+  color: #efe5e5;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+#photos .emptyList span {
+  font-size: 18px;
+}
+
+#about {
+  background: url("../../assets/about-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: aliceblue;
+  min-height: 100vh;
+  width: 100%;
+  padding-top: 100px;
+  display: flex;
+  align-items: flex-start;
+}
+#about h2 {
+  color: #fff;
+  font-size: 40px;
+  font-weight: 400;
+  max-width: 500px;
+  padding: 0;
+  margin-bottom: 30px;
+}
+#about h3 {
+  color: #fff;
+  font-weight: 500;
+  font-weight: 21px;
+}
+#about p {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  max-width: 700px;
+  padding: 7px 0;
+}
+
+#contact {
+  background: url("../../assets/contact-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: aliceblue;
+  min-height: 100vh;
+  width: 100%;
+}
+#contact .container {
+  margin-top: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+}
+#contact .adress {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+}
+#contact .adress p {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+#contact .map {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    max-width: 970px;
+  }
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+  #photos {
+    display: flex;
+    align-items: center;
+  }
+  #photos .section {
+    gap: 1%;
+  }
+  #photos .side label {
+    font-size: 17px;
+  }
+  #photos #rovers.card {
+    width: 70%;
+    flex-wrap: wrap;
+    height: 200px;
+    justify-content: space-around;
+  }
+  #photos #rovers.card p {
+    padding-bottom: 5px;
+  }
+  #photos #rovers.card img {
+    width: 180px;
+    height: 180px;
+  }
+  #photos div.sol label {
+    font-size: 14px;
+    font-weight: 600;
+    height: 30px;
+  }
+  #contact {
+    background-size: cover;
+    background-position: left;
+  }
+  #contact div.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 50px;
+  }
+  #contact .map {
+    top: 0;
+  }
+}
+@media (max-width: 992px) {
+  .container {
+    max-width: 750px;
+  }
+  .title .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7%;
+    margin-top: 100px;
+  }
+  .title .container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+  #photos {
+    display: flex;
+    align-items: center;
+  }
+  #photos .section {
+    gap: 3%;
+  }
+  #photos .side label {
+    font-size: 17px;
+  }
+  #photos #rovers.card {
+    width: 80%;
+    flex-wrap: wrap;
+    height: 200px;
+    justify-content: space-around;
+  }
+  #photos #rovers.card p {
+    padding-bottom: 5px;
+  }
+  #photos #rovers.card img {
+    width: 150px;
+    height: 150px;
+  }
+  #photos div.sol label {
+    font-size: 14px;
+    font-weight: 600;
+    height: 30px;
+  }
+  #photos .photos-template {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #photos .photos-template .photo-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0;
+    width: 200px;
+    height: 250px;
+    padding: 10px;
+    border: 3px solid black;
+    border-radius: 25px;
+    background-color: #fff;
+    color: #000;
+    font-size: 15px;
+  }
+  #photos .photos-template .photo-card img {
+    width: 150px;
+    height: 150px;
+  }
+  #photos .photos-template button {
+    width: 250px;
+    height: 35px;
+    text-align: center;
+    margin: 30px auto;
+    background-color: darksalmon;
+    color: #f1e6db;
+    border: none;
+    font-size: 21px;
+    font-weight: 500;
+    border-radius: 25px;
+    cursor: pointer;
+  }
+  #photos .photos-template button:hover {
+    background-color: #fff;
+    color: #000;
+  }
+  #photos .photos-template button:active {
+    transform: translateY(5px);
+  }
+  #photos .photos-template .wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+  }
+  #contact {
+    background-size: cover;
+    background-position: 25%;
+  }
+  #contact div.container {
+    display: flex;
+    padding: 0 30px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 50px;
+  }
+  #contact .map iframe {
+    width: 350px;
+    height: 300px;
+  }
+  #contact .sign {
+    justify-content: center;
+  }
+}
+@media (max-width: 767px) {
+  .container {
+    max-width: none;
+  }
+  .title .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+  }
+  .title h1 {
+    font-size: 30px;
+    text-align: center;
+  }
+  .title h3 {
+    font-size: 20px;
+    text-align: center;
+  }
+  #photos {
+    padding: 50px 0;
+  }
+  #photos .section {
+    gap: 3%;
+  }
+  #photos .side label {
+    font-size: 15px;
+  }
+  #photos .side .sol label {
+    font-size: 15px;
+    height: 40px;
+  }
+  #photos .side .sol input {
+    font-size: 13px;
+  }
+  #photos #rovers.card {
+    width: 80%;
+    flex-wrap: wrap;
+    height: 200px;
+    justify-content: space-around;
+  }
+  #photos #rovers.card p {
+    padding-bottom: 5px;
+    font-size: 14px;
+  }
+  #photos #rovers.card img {
+    margin: 3px;
+  }
+  #photos .photos-template {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #photos .photos-template .photo-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0;
+    width: 70%;
+    height: 350px;
+    padding: 10px;
+    border: 3px solid black;
+    border-radius: 25px;
+    background-color: #fff;
+    color: #000;
+    font-size: 15px;
+  }
+  #photos .photos-template .photo-card img {
+    width: 95%;
+    height: auto;
+    margin-bottom: 15px;
+  }
+  #photos .photos-template button {
+    width: 70%;
+    height: 35px;
+    text-align: center;
+    margin: 30px auto;
+    background-color: darksalmon;
+    color: #f1e6db;
+    border: none;
+    font-size: 21px;
+    font-weight: 500;
+    border-radius: 25px;
+    cursor: pointer;
+  }
+  #photos .photos-template button:hover {
+    background-color: #fff;
+    color: #000;
+  }
+  #photos .photos-template button:active {
+    transform: translateY(5px);
+  }
+  #photos .photos-template .wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  #about {
+    padding: 50px 0;
+  }
+  #about h2 {
+    font-size: 35px;
+    text-align: center;
+  }
+  #contact {
+    background-position: 40%;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #contact .container {
+    width: 100%;
+    margin: 0;
+  }
+}
+@media screen and (max-width: 620px) {
+  #photos {
+    padding-top: 80px;
+  }
+  #photos div.side {
+    width: 33%;
+  }
+  #photos div.side h3 {
+    font-size: 15px;
+  }
+  #photos div.side label, #photos div.side .sol label {
+    font-size: 13px;
+  }
+  #photos div.side input#sol {
+    font-size: 11px;
+  }
+  #photos div.side button {
+    font-size: 15px;
+  }
+  #photos div.content {
+    flex-direction: column;
+    width: 65%;
+  }
+  #photos div.content #rovers {
+    width: 100%;
+    flex-direction: column;
+    height: auto;
+  }
+  #photos div.content #rovers img {
+    width: 100%;
+    height: auto;
+  }
+  #photos .photos-template {
+    width: 65%;
+    flex-direction: column;
+  }
+  #photos .photos-template div.wrap {
+    width: 100%;
+    flex-direction: column;
+  }
+  #photos .photos-template div.wrap .photo-card {
+    width: 95%;
+    height: auto;
+  }
+}
+@media screen and (orientation: landscape) and (max-width: 768px) {
+  :host {
+    grid-template: auto auto auto auto/1fr;
+  }
+  .title div.container {
+    margin: 0 auto 30px;
+    padding: 0 15px;
+  }
+  .title div.container h1 {
+    padding: 10px;
+    margin: 0;
+  }
+  .title div.container h3 {
+    padding-top: 10px;
+    margin-bottom: 20px;
+  }
+  #photos {
+    padding: 0 15px;
+  }
+  #photos .container {
+    padding: 30px 15px;
+  }
+  #photos .photos-template {
+    width: 65%;
+    flex-direction: column;
+  }
+  #photos .photos-template div.wrap {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  #photos .photos-template div.wrap .photo-card {
+    width: 47%;
+    height: auto;
+  }
+  #about {
+    padding: 0 15px;
+  }
+  #about .container {
+    height: 100%;
+  }
+  #about .container h2 {
+    text-align: center;
+    margin: 20px auto;
+    font-size: 30px;
+  }
+}/*# sourceMappingURL=body.component.css.map */

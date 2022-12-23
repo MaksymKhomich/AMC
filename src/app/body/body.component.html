@@ -1,0 +1,192 @@
+<div id="home" class="title">
+    <div class="container">
+        <h1>
+            Wellcome to your first journey to Mars
+        </h1>
+        <h3>
+            With our help, you can learn more about Mars!
+            Discover space deeply with AMC and NASA.
+            Click the button. We are starting!
+        </h3>
+
+        <a routerLink="#photos">Launch rocket to the Mars </a>
+    </div>
+</div>
+
+<div id="photos">
+    <div class="container section">
+
+        <div class="side">
+            
+            <div class="rover">
+                <h3>
+                    Select Rover
+                </h3>
+
+                <div title="Curiosity">
+                    <input type="radio" name="rover" [checked]="true" id="curiosity">
+                    <label for="curiosity">Curiosity</label>
+                </div>
+                
+                <div title="Spirit">
+                    <input type="radio" name="rover" id="spirit">
+                    <label for="spirit">Spirit</label>
+                </div>
+
+                <div title="Opportunity">
+                    <input type="radio" name="rover" id="opportunity">
+                    <label for="opportunity">Opportunity</label>
+                </div>
+
+            </div>
+            
+            <div class="cameras">
+                <h3>
+                    Select Camera
+                </h3>
+
+                <div title="Front Hazard Avoidance Camera">
+                    <input type="radio" name="camera" [checked]="true" id="FHAZ">
+                    <label for="Front">Front</label>
+                </div>
+
+                <div title="Navigation Camera">
+                    <input type="radio" name="camera" id="NAVCAM">
+                    <label for="Navigation">Navigation</label>
+                </div>
+
+                <div title="Rear Hazard Avoidance Camera">
+                    <input type="radio" name="camera" id="RHAZ">
+                    <label for="Rear">Rear</label>
+                </div>
+
+            </div>
+
+            <div class="sol">
+
+                <h3>
+                    Select Sol (day)
+                </h3>
+
+                <div>
+                    <label for="sol">
+                        from 0 to ... look the description 
+                    </label>
+                    <input type="text" id="sol" placeholder="Enter the number" >
+                </div>
+
+            </div>
+
+            <button (click)="showResult()">apply</button>
+
+        </div>
+
+        <div class="content" *ngIf="!show">
+
+
+            <div 
+            *ngFor="let item of data" id="rovers" class="card">
+
+                <img src="../../assets/{{ item.name | lowercase}}.jpg" alt="{{item.name}}">
+
+                <h3 class="card-title">Name: <b>{{ item.name}} </b> </h3>
+                <p>Launch date: {{ item.launch_date }}</p>
+                <p>Landing date: {{ item.landing_date }}</p>
+                <p>Total photos: {{ item.total_photos }}</p>
+                <p>Maximum Sol number: {{ item.max_sol }}</p>
+
+            </div>
+
+            
+        </div>
+
+        <div *ngIf="show" class="photos-template">
+            <div class="wrap">
+                
+                <div *ngFor="let item of data | paginate
+                : {
+                    itemsPerPage: maxPhoto,
+                    currentPage: page,
+                    totalItems: allPhotos
+                    }" 
+                class="photo-card">
+                    <img src="{{item.img_src}}" alt="img">
+                    <p>
+                        Date of picture: {{ item.earth_date }}
+                    </p>
+                    
+                </div>
+                
+            </div>
+
+            <button *ngIf="show" 
+            (click)="loadMore()" 
+            id="loadMore">
+                Load more...
+            </button>
+
+        </div>
+        <div *ngIf="emptyList" class="emptyList">
+            Today our rover doesn't take pictures
+
+            <span>
+                Please, choose another day or check if the day is entered
+            </span>
+        </div>
+    </div>
+</div>
+
+<div id="about">
+    <div class="container">
+        <div>
+            <h2>Awesome Cosmic Mars - we are helping to travel through the space</h2>
+            <h3>AMC and NASA open the whole space for you</h3>
+            <p>
+                We are small team with a family structure and relation.
+            </p>
+            <p>
+                We collected brightness people to realise the simple task - take the opportunity to learn something new about our Solar system. So, we decided to start with Mars. Mars - the most popular and promising planet to development. 
+                NASA have 3 rovers which take pictures the surface of Mars. They use 3 types of cameras. Сertainly, you can set the option that you want.
+            </p>
+            <p>
+                Everybody takes a part of his own soul for this. So, we hope you enjoyed from this journey to Mars. 
+            </p>
+            <p>
+                Share with your friends and see you soon
+            </p>
+        </div>
+
+    </div>
+</div>
+
+<div id="contact">
+<div class="container">
+
+        <div class="adress">
+            <p>
+                Mary W. Jackson NASA Headquarters
+            </p>
+            <p>
+                300 E. Street SW, Suite 5R30
+            </p>
+            <p>
+                Washington, DC 20546
+            </p>
+            <p>
+                (202) 358-0001 (Office)
+            </p>
+            <p>
+                (202) 358-4338 (Fax)
+            </p>
+        </div>
+
+        <div class="map">
+
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3105.7890009087964!2d-77.01846728438424!3d38.883069055393136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b77f50ae6f01%3A0x676e7adc4032899b!2sNASA!5e0!3m2!1sru!2sua!4v1666104365373!5m2!1sru!2sua" width="400" height="300" style="border:0;" allowfullscreen="true" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+
+
+        </div>
+
+    </div>
+</div>
